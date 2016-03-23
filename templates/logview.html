@@ -1,0 +1,11 @@
+{% if not log %}
+<h3>No log entries found</h3>
+{% else %}
+{% for entry in log %}
+<div class="box">
+    <img src="/static/symbols/{{ entry[1] }}.png" class="symbol">
+    <p class="content">{{ entry[0] }}</p>
+    <div class="clear"></div>
+</div>
+{% endfor %}
+{% endif %}

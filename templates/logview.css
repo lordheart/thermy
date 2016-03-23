@@ -1,0 +1,19 @@
+.box {
+    border: 1px solid #444;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+}
+.symbol {
+    position: relative;
+    float: left;
+    height: 96;
+    width: 96;
+}
+.content {
+    float: left;
+    padding-left: 10px;
+}
+.clear {
+    clear: both;
+}

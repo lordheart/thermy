@@ -39,6 +39,7 @@ def forecast(idx):
 	printer.println(' ' + cond)
 
 printer = Adafruit_Thermal("/dev/ttyAMA0", 19200, timeout=5)
+printer.begin(heatTime=200)
 deg     = chr(0xf8) # Degree symbol on thermal printer
 
 # Fetch forecast data from Yahoo!, parse resulting XML

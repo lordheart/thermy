@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Thermal Printer page</title>
+    <style type="text/css">
+        body {
+            margin: 40px auto;
+            max-width: 650px;
+            font-size: 18px;
+            color: #444;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        .radio { /* HIDE RADIO */
+            visibility: hidden; /* Makes input not-clickable */
+            position: absolute; /* Remove input from document flow */
+        }
+        
+        label > img { /* IMAGE STYLES */
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+        input:checked + label > img { /* (RADIO CHECKED) IMAGE STYLES */
+            border: 1px solid #9ecaed;
+            border-radius: 10px;
+            box-shadow:0 0 10px #9ecaed;
+        }
+        ul {
+            list-style-type: none;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+        }
+        li {
+            display: inline-block;
+        }
+        br {
+            line-height: 0;
+        }
+        textarea {
+            font-family: inherit;
+            width: 350px;
+            height: auto;
+	    font-size: 1.5em;
+        }
+        img {
+            width: 64;
+            height: 64;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>THERMOPRINT</h1>
+    <form action="/print" method="post" width="300">
+
+        <textarea autofocus="true" id="text" rows="10" cols="40" name="text" maxlength="140" required="true"></textarea>
+        <br>
+        <ul>
+        {% for symbol in symbols %}
+            <li>
+                <input type="radio" name="symbol" value="{{ symbol }}" id="{{ symbol }}" class="radio" required="true">
+                <label for="{{ symbol }}">
+                    <img src="/static/symbols/{{ symbol }}.png">
+                </label>
+            </li>
+        {% endfor %}
+        </ul>
+        <br>
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Thermal Printer Status</title>
+    <style type="text/css">
+        body {
+            margin: 40px auto;
+            max-width: 650px;
+            font-size: 18px;
+            color: #444;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        .status {
+            height: 18;
+            width: 18;
+        }
+        
+        {% include 'logview.css' %}
+    </style>
+</head>
+
+<body>
+    <h1>STATUS</h1>
+    {% if paper_status %}
+        Paper status: <img src="/static/status_yes.svg" class="status">
+    {% else %}
+        Paper status: <img src="/static/status_no.svg" class="status">
+    {% endif %}
+    <a href="/log"><h2>Previous prints</h2></a>
+    {% include 'logview.html' %}
+</body>
+
+</html>
