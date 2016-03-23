@@ -61,16 +61,16 @@ printer.setDefault()
 #import gfx.adalogo as adalogo
 #printer.printBitmap(adalogo.width, adalogo.height, adalogo.data)
 
-import gfx.smileneutral as smile
-printer.printBitmap(smile.width, smile.height, smile.data, LaaT=True)
+#import gfx.aaa as smile
+#printer.printBitmap(smile.width, smile.height, smile.data, LaaT=True)
 
 #import gfx.dither as smile
 #printer.printBitmap(smile.width, smile.height, smile.data, LaaT=True)
-# from PIL import Image
-# imgpath = "symbols/4_thumbs_up.png"
-# symbolimg = Image.open(imgpath)
-# printer.printImage(symbolimg)
-# print("printed")
+from PIL import Image
+imgpath = "static/symbols/aaa.png"
+symbolimg = Image.open(imgpath)
+printer.printImage(symbolimg)
+#print("printed")
 
 ## Print the 135x135 pixel QR code in adaqrcode.py
 #import gfx.adaqrcode as adaqrcode
